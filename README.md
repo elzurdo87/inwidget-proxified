@@ -49,25 +49,49 @@ PHP >= 5.4.0 with cURL extension
 
 ## Installation
 
-### 1. Upload source code to the root folder of your website
+There are two ways to install the widget. First one  (without composer) is recommended because it is simpler.
 
-[Download](https://github.com/restyler/inwidget/releases) source code. Extract /inwidget folder.
+### Installation way #1: via git clone or release archive download: 
+1. Upload source code to the root folder of your website
+
+[Download](https://github.com/restyler/inwidget-proxified/releases) latest release source code. Extract /inwidget folder.
 Upload /inwidget folder to website with all files inside.
 
-Or use composer
+So your files structure will be:
+ - index.php (your website main PHP file)
+ - inwidget/ (widget code)
+ - inwidget/imgproxy.php (and all other inwidget files here)
+
+### Installation way #2: via composer
 ```sh
 composer require restyler/inwidget
 cp vendor/restyler/inwidget/config.php config.php # copy sample config to your project root folder
 ```
 
-**In case you install via composer, you need also to create controller file in your project root folder:**
+then create widget controller file (or create symlink) in your project public folder:
 Call it 'index.php' or 'widget.php' - just don't forget to use this name in the IFRAME tag.
 The contents of the controller file should be:
 ```
 <?php
-
 include 'vendor/restyler/inwidget/index.php';
 ```
+
+then create image proxy file (or create symlink) in your project public folder:
+Call it 'imgproxy.php' 
+The contents of the imgproxy.php file should be:
+```
+<?php
+
+include 'vendor/restyler/inwidget/imgproxy.php';
+```
+
+the copy skins folder (or create a symlink):
+
+```sh
+cp -R vendor/restyler/inwidget/skins skins
+```
+
+
 
 If you have downloaded the package to local folder of the project, e.g. to inwidget folder, you can just call the script directly from your IFRAME tag:  `/inwidget/index.php?toolbar=...`
 
