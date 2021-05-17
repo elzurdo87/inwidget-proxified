@@ -49,57 +49,22 @@ PHP >= 5.4.0 with cURL extension
 
 ## Installation
 
-There are two ways to install the widget. First one  (without composer) is recommended because it is simpler.
 
-### Installation way #1: via git clone or release archive download: 
-1. Upload source code to the root folder of your website
+### 1. Upload source code of the widget to the public folder of your website
 
 [Download](https://github.com/restyler/inwidget-proxified/releases) latest release source code. Extract /inwidget folder.
 Upload /inwidget folder to website with all files inside.
 
-So your files structure will be:
+Your files structure should look like this be:
  - index.php (your website main PHP file)
  - inwidget/ (widget code)
- - inwidget/imgproxy.php (and all other inwidget files here)
-
-### Installation way #2: via composer
-```sh
-composer require restyler/inwidget
-cp vendor/restyler/inwidget/config.php config.php # copy sample config to your project root folder
-```
-
-then create widget controller file (or create symlink) in your project public folder:
-Call it 'index.php' or 'widget.php' - just don't forget to use this name in the IFRAME tag.
-The contents of the controller file should be:
-```
-<?php
-include 'vendor/restyler/inwidget/index.php';
-```
-
-then create image proxy file (or create symlink) in your project public folder:
-Call it 'imgproxy.php' 
-The contents of the imgproxy.php file should be:
-```
-<?php
-
-include 'vendor/restyler/inwidget/imgproxy.php';
-```
-
-the copy skins folder (or create a symlink):
-
-```sh
-cp -R vendor/restyler/inwidget/skins skins
-```
-
-
-
-If you have downloaded the package to local folder of the project, e.g. to inwidget folder, you can just call the script directly from your IFRAME tag:  `/inwidget/index.php?toolbar=...`
+ - inwidget/index.php (inwidget files are located here)
 
 **Note**. inWidget uses relative paths, so you can upload it to any folder. After that do not forget change URL in IFRAME tag.
 
 ### 2. Set write permissions to the cache folder 
 
-inWidget stores cached data in /inwidget/cache folder (if you downloaded the repo and extracted it to /inwidget) or /cache if you installed via composer.
+inWidget stores cached data in /inwidget/cache folder (if you downloaded the repo and extracted it to /inwidget)
 If this directory does not have write permissions you will see ERROR #101.
 In case you are using Apache:
 ```sh
