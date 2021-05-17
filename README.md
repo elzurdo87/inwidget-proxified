@@ -68,7 +68,7 @@ inWidget stores cached data in /inwidget/cache folder (if you downloaded the rep
 If this directory does not have write permissions you will see ERROR #101.
 In case you are using Apache:
 ```sh
-chown www-data cache
+chown www-data inwidget/cache
 ```
 
 
