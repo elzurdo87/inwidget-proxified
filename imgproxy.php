@@ -3,7 +3,7 @@ function ends_with( $haystack, $needle ) {
     return substr($haystack, -strlen($needle))===$needle;
 }
 
-if(!in_array(ini_get('allow_url_fopen'), [1, 'on', 'true'])) {
+if (!in_array(ini_get('allow_url_fopen'), [1, 'on', 'true'])) {
    die('PHP configuration change is required for image proxy: allow_url_fopen setting must be enabled!');
 } 
 
