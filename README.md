@@ -4,7 +4,7 @@
 # net::ERR_BLOCKED_BY_RESPONSE issue (new in 2021)
 Instagram has just updated cross-origin policy on their images, so web browsers now throw ERR_BLOCKED_BY_RESPONSE in console and refuse to display the images.
 To mitigate this, the inwidget has been updated to proxy images via simple image proxy.
-https://github.com/restyler/inwidget/commit/2e4986ccde87c47e10b78df04e82c366d1055633
+https://github.com/restyler/inwidget-proxified/blob/master/imgproxy.php
 
 (consider switching to nginx/cloudflare proxying for better performance and cache support)
 
